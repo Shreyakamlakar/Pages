@@ -1,0 +1,73 @@
+
+<table>
+    <tr>
+      <td>Entity</td>
+      <td> <select name="entity" id="">
+        <option value="ADCB UAE">ADCB UAE</option>
+      </select>
+      </td>
+  
+      <td>Product</td>
+      <td> <select name="product" id="">
+        <option value="AIF">AIF</option>
+      </select>
+      </td>
+  
+      <td>Total Record(s) 1</td>
+    </tr>
+  
+    <tr>
+      <td></td>
+      <td colspan="3" >
+        <input class="func_btn" type="button" title="New" value="New" (click)="onClickNew()" />
+        <input class="func_btn" type="button" title="Save" value="Save" [disabled]="disableSave" (click)="onClickSave()"/>
+        <input class="func_btn" type="button" title="Cancel" value="Cancel" (click)="onClickCancel()" />
+        <input class="func_btn" type="button" title="Delete" value="Delete" disabled />
+  
+      </td>
+    </tr>
+  </table>
+
+
+
+  <!-- <table>
+    <tr *ngIf="onNew()" >
+      <tbody>
+        <td><input type="checkbox">
+        </td>
+        <td>1</td>
+        <td><input type="text"></td>
+      </tbody>
+      
+    </tr>
+  </table> -->
+
+  <br>
+<table>
+  <tr>
+    
+    <td></td>
+    <td><b>No </b></td>
+    <td><b>Value Days </b></td>
+    
+    
+  </tr>
+
+  
+  <tr *ngIf="showBox" >
+    <tbody>
+      <td><input  type="checkbox">
+      </td>
+      <td></td>
+      <td><input type="text" id="newBox" [(ngModel)]="Value" ngModel required></td>
+    </tbody>
+    
+  </tr>
+  
+  <tr *ngFor="let value of valueDaysArr; let i=index" >
+      <td><input type="checkbox"></td>
+      <td>{{value.No}}</td>
+      <td>T + {{value.Value_Days}}</td>
+  </tr>
+</table>
+
